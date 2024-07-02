@@ -16,7 +16,7 @@ export default{
     <div class="global-container">
       <div class="card-container" v-for="data in myJson">
       
-      <img :src="data.cover" height="200px" width="200px"/>
+      <img :src="data.cover"/>
       <div> {{ data.title }}</div>
 
       </div>
@@ -27,16 +27,30 @@ export default{
   </main>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
+@import "../assets/main.scss";
+
 .global-container {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  width: 80%
+  justify-content: center;
+  text-align: center;
+
 }
 .card-container{
   border: 1px solid black;
   margin: 1rem;
+  width: 25%;
+  border-radius: 0.5rem;
+  background-color: $rouge;
+  color: white;
+}
+
+img {
+  height: auto;
+  width: 100%;
+  height: 80%;
 }
 
 </style>
