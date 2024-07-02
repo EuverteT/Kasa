@@ -1,16 +1,14 @@
-<script setup lang="ts">
+<script>
 import HeureCourante from '../components/HeureCourante.vue';
+import json from '../assets/logements.json';
 
-// export default {
-//     async setup() {
-//         const resp = await fetch('../assets/logements.json');
-//         const logements = await resp.json();
-        
-//     }
-
-
-//}
-
+export default{
+    data(){
+        return {
+            myJson: json
+        }
+    }
+}
 
 </script>
 
@@ -18,5 +16,6 @@ import HeureCourante from '../components/HeureCourante.vue';
     <main>
         <div>CECI EST UN TEXTE EN HTML</div>
         <HeureCourante />
+        <div v-for="data in myJson">{{ data }}</div>
     </main>
 </template>
