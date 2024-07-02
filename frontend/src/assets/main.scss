@@ -1,4 +1,6 @@
-@import './base.css';
+@import './base.scss';
+@import "variables";
+@import "mixins";
 
 #app {
   margin: 0 auto;
@@ -10,5 +12,6 @@ a,
   text-decoration: none;
   transition: 0.4s;
   padding: 3px;
+  color: $rouge;
 }
 
