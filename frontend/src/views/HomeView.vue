@@ -13,7 +13,6 @@ export default{
 
 <template>
   <main>
-    <RouterLink to="/test">Page de test</RouterLink>
     <div class="global-container">
       <div class="card-container" v-for="data in myJson">
       
