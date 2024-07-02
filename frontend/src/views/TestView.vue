@@ -6,6 +6,5 @@
 
 <template>
   <main>
-    <RouterLink to="/test">Page de test</RouterLink>
   </main>
 </template>
