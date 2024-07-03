@@ -1,29 +1,49 @@
 <script>
+const currentPath = window.location.href
+console.log(currentPath)
+
+const urlParams = new URLSearchParams(currentPath);
+const idne = urlParams.get('location/');
+console.log(idne)
+
 import json from '../assets/logements.json';
 
-export default{
 
-    
+
+
+export default{
+    name: "Location",
 
     data(){
         return {
-            myJson: json
+            id: localStorage.getItem("locationId"),
+            myJson: json,
+            usedUrl: window.location.search
         }
+    },
+    created() {
+        this.getUrl();
+    },
+    methods: {
+        getUrl(){
+        
+        console.log("test")
+        
     }
+    }
+
 }
+
 
 </script>
 
+
+
+
 <template>
   <main>
-    <div class="global-container">
-      <a class="card-container" v-for="data in myJson" 
-      :href="'http://localhost:5173/location/' + data.id">
+    <div class="global-container">TEST
       
-      <img :src="data.cover"/>
-      <div class="homeCardTitle"> {{ data.title }}</div>
-      </a>
-
     </div>
 
 
@@ -65,3 +85,5 @@ img {
 }
 
 </style>
+
+
