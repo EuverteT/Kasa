@@ -1,15 +1,17 @@
 <script setup>
 import { RouterLink } from 'vue-router'
+import HeureCourante from '../components/HeureCourante.vue';
 
 </script>
 
 <template>
   <div class="header">
     <img alt="Logo Kasa" class="logo" src="@/assets/kasa.png" width="125" height="50" />
+    <HeureCourante />
+
   <nav>
     <RouterLink to="/">Accueil</RouterLink>
     <RouterLink to="/about">A propos</RouterLink>
-    <RouterLink to="/test">Page de test</RouterLink>
   </nav>
 
   </div>

@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div>Il est {{ heureCourante() }}</div>
+        <div class="heure">{{ heureCourante() }}</div>
     </div>
 </template>
 
@@ -22,4 +22,12 @@ export default {
 };
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+@import "./src/assets/main.scss";
+.heure {
+    color: $rouge;
+    font-size: 1.5rem;
+    font-weight: 800;
+}
+
+</style>
