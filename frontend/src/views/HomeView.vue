@@ -17,8 +17,7 @@ export default{
       <div class="card-container" v-for="data in myJson">
       
       <img :src="data.cover"/>
-      <div> {{ data.title }}</div>
-
+      <div class="homeCardTitle"> {{ data.title }}</div>
       </div>
 
     </div>
@@ -29,6 +28,11 @@ export default{
 
 <style scoped lang="scss">
 @import "../assets/main.scss";
+
+.homeCardTitle {
+  height: 20%;
+  align-content: center;
+}
 
 .global-container {
   display: flex;
@@ -45,6 +49,9 @@ export default{
   border-radius: 0.5rem;
   background-color: $rouge;
   color: white;
+  display: flex;
+  flex-direction: column;
+
 }
 
 img {
