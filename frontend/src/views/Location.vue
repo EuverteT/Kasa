@@ -21,7 +21,7 @@ export default{
         myJson: json,
         id: "",
         title: "",
-        location: []
+        data: []
         
     }
 },
@@ -33,7 +33,7 @@ export default{
       for (let data of json) {
         if (id == data.id) {
          this.title = data.title
-         this.location = data 
+         this.data = data 
         }
       }
     }
@@ -47,9 +47,13 @@ export default{
 
 <template>
   <main>
-    <div class="global-container"> Le titre de cette location est: {{ title }}
-    </div>
-    <div class="global-container"> L'id qu'on doit voit dans l'url est: {{ location.id }}
+    <div class="global-container">
+      <img :src="data.cover"/>
+      
+      <div class="title">{{ data.title }}</div>
+      
+      <div class="location">{{ data.location }}</div>
+      
     </div>
 
 
@@ -60,35 +64,28 @@ export default{
 <style scoped lang="scss">
 @import "../assets/main.scss";
 
-.homeCardTitle {
-  height: 20%;
-  align-content: center;
-}
-
 .global-container {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  text-align: center;
-
-}
-.card-container{
-  border: 1px solid black;
-  margin: 1rem;
-  width: 25%;
-  border-radius: 0.5rem;
-  background-color: $rouge;
-  color: white;
-  display: flex;
   flex-direction: column;
+  color: $rouge;
+  margin: 0 5rem;
 
 }
+
 
 img {
-  height: auto;
+  max-height: 400px;
+  align-self: center;
   width: 100%;
-  height: 80%;
+  object-fit: cover;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 800;
 }
 
 </style>
