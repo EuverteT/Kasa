@@ -3,13 +3,12 @@ import json from '../assets/logements.json';
 
 export default{
 
-    
-
     data(){
         return {
             myJson: json
         }
     }
+    
 }
 
 </script>

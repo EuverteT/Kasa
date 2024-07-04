@@ -1,50 +1,57 @@
 <script>
 const currentPath = window.location.href
-console.log(currentPath)
+// console.log(currentPath)
 
-const urlParams = new URLSearchParams(currentPath);
-const idne = urlParams.get('location/');
-console.log(idne)
+const id = currentPath.slice(31)
+// console.log(id)
+
 
 import json from '../assets/logements.json';
 
-
-
-
 export default{
-    name: "Location",
 
-    data(){
-        return {
-            id: localStorage.getItem("locationId"),
-            myJson: json,
-            usedUrl: window.location.search
-        }
-    },
-    created() {
-        this.getUrl();
-    },
-    methods: {
-        getUrl(){
-        
-        console.log("test")
+
+  name: "Location",
+
+  created() {
+    this.getData();
+  },
+  data(){
+    return {
+        myJson: json,
+        id: "",
+        title: "",
+        location: []
         
     }
+},
+  methods: {
+
+    getData(){
+      // console.log(id)
+
+      for (let data of json) {
+        if (id == data.id) {
+         this.title = data.title
+         this.location = data 
+        }
+      }
     }
 
 }
+}
+
 
 
 </script>
 
-
-
-
 <template>
   <main>
-    <div class="global-container">TEST
-      
+    <div class="global-container"> Le titre de cette location est: {{ title }}
     </div>
+    <div class="global-container"> L'id qu'on doit voit dans l'url est: {{ location.id }}
+    </div>
+
 
 
   </main>
