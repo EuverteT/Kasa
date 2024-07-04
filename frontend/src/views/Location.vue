@@ -20,7 +20,6 @@ export default{
     return {
         myJson: json,
         id: "",
-        title: "",
         data: []
         
     }
@@ -32,7 +31,6 @@ export default{
 
       for (let data of json) {
         if (id == data.id) {
-         this.title = data.title
          this.data = data 
         }
       }
@@ -49,10 +47,25 @@ export default{
   <main>
     <div class="global-container">
       <img :src="data.cover"/>
-      
-      <div class="title">{{ data.title }}</div>
-      
-      <div class="location">{{ data.location }}</div>
+
+      <div class="mid-container">
+    
+        <div class="info-container">
+          <div class="title">{{ data.title }}</div>
+          <div class="location">{{ data.location }}</div>
+          <div class="tags-container">
+            <div class="tags" v-for="tag in data.tags">{{ tag }}</div>
+          </div>
+        </div>
+
+        <div class="hostAndRating-container">
+          <div class="host-container">
+            <div class="host">{{data.host.name}}</div>
+            <img :src="data.host.picture" />
+          </div>
+          <div class="rating">{{ data.rating }} étoiles</div>
+        </div>
+      </div>
       
     </div>
 
@@ -83,9 +96,51 @@ img {
 
 }
 
+.mid-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.hostAndRating-container {
+
+}
+
+.host-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  .host {
+    margin-right: 1rem;
+  }
+
+  img {
+    height: 50px;
+    width: 50px;
+    border-radius: 2rem;
+  }
+
+}
+
+
 .title {
   font-size: 2rem;
   font-weight: 800;
+}
+
+.tags-container {
+  display: flex;
+  flex-direction: row;
+  margin: 1rem 0;
+}
+
+.tags {
+  margin-right: 1rem;
+  background-color: $rouge;
+  color: white;
+  border-radius: 0.5rem;
+  padding: 0.2rem 0.5rem;
 }
 
 </style>
