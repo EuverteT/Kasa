@@ -1,4 +1,6 @@
 <script>
+
+
 const currentPath = window.location.href
 // console.log(currentPath)
 
@@ -7,11 +9,18 @@ const id = currentPath.slice(31)
 
 
 import json from '../assets/logements.json';
+import Description from '../components/Description.vue'
+import Equipments from '../components/Equipments.vue'
+
 
 export default{
 
 
   name: "Location",
+  components: {
+    Description,
+    Equipments,
+  },
 
   created() {
     this.getData();
@@ -66,6 +75,11 @@ export default{
           <div class="rating">{{ data.rating }} étoiles</div>
         </div>
       </div>
+
+      <div class="bottom-container">
+        <Description />
+        <Equipments />
+      </div>
       
     </div>
 
@@ -102,8 +116,10 @@ img {
   justify-content: space-between;
 }
 
-.hostAndRating-container {
-
+.bottom-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .host-container {
