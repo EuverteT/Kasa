@@ -1,5 +1,9 @@
 <script>
-
+export default{
+    props: {
+    description: String
+}
+}
 </script>
 
 <template>
@@ -8,7 +12,7 @@
         <div>Description</div>
         <button>&uarr;</button>
     </div>
-    <div>Ceci est du texte</div>
+    <div>{{ description }}</div>
   </div>
   
 </template>
@@ -16,10 +20,5 @@
 <style scoped lang=scss>
 
 @import "./src/assets/main.scss";
-
-
-
-
-
 
 </style>

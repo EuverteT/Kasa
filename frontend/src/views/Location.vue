@@ -1,12 +1,10 @@
 <script>
 
-
 const currentPath = window.location.href
 // console.log(currentPath)
 
 const id = currentPath.slice(31)
 // console.log(id)
-
 
 import json from '../assets/logements.json';
 import Description from '../components/Description.vue'
@@ -14,7 +12,6 @@ import Equipments from '../components/Equipments.vue'
 
 
 export default{
-
 
   name: "Location",
   components: {
@@ -32,20 +29,23 @@ export default{
         data: []
         
     }
-},
+  },
   methods: {
 
     getData(){
       // console.log(id)
-
       for (let data of json) {
         if (id == data.id) {
          this.data = data 
         }
       }
     }
+  }
+  // ,
+  // props: {
+  // descript: String
+  // }
 
-}
 }
 
 
@@ -77,8 +77,8 @@ export default{
       </div>
 
       <div class="bottom-container">
-        <Description />
-        <Equipments />
+        <Description :description="data.description" />
+        <Equipments :equipments="data.equipments" />
       </div>
       
     </div>

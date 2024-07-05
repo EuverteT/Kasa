@@ -1,5 +1,9 @@
 <script>
-
+export default{
+    props: {
+    equipments: Array
+}
+}
 </script>
 
 <template>
@@ -8,7 +12,7 @@
         <div>Equipements</div>
         <button>&uarr;</button>
     </div>
-    <div>Ceci est du texte</div>
+    <div>{{ equipments }}</div>
   </div>
   
 </template>
@@ -16,11 +20,5 @@
 <style scoped lang=scss>
 
 @import "./src/assets/main.scss";
-
-.component-title {
-    display: flex;
-    flex-direction: row;
-
-}
 
 </style>
