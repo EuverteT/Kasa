@@ -1,7 +1,15 @@
+<script>
+
+import json from '../assets/about.json';
+import AboutComponent from '../components/AboutComponent.vue'
+
+console.log(json)
+
+</script>
+
+
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
-  </div>
+  <AboutComponent v-for="item in myJson" />
 </template>
 
 <style>

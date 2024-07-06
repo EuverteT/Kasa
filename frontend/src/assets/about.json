@@ -1,0 +1,22 @@
+[
+    {
+        "name": "fiability",
+        "title": "Fiabilité",
+        "text": "Test1"
+    },
+    {
+        "name": "respect",
+        "title": "Respect",
+        "text": "Test2"
+    },
+    {
+        "name": "service",
+        "title": "Service",
+        "text": "Test3"
+    },
+    {
+        "name": "security",
+        "title": "Sécurité",
+        "text": "Test4"
+    }
+]
