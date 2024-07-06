@@ -1,7 +1,14 @@
 <script>
 export default{
+
+    data(){
+      return {
+        open: true
+      }
+    },
+
     props: {
-    equipments: Array
+      equipments: Array
 }
 }
 </script>
@@ -10,10 +17,11 @@ export default{
   <div class="component">
     <div class="component-title">
         <div>Equipements</div>
-        <button class="expand-button">&uarr;</button>
+        <button v-if="open" @click= "open = false" class="notExpand-button">&uarr;</button>
+        <button v-if="!open" @click= "open = true" class="expand-button">&darr;</button>
     </div>
     <div class="equipments">
-      <div v-for="data in equipments">{{ data }}</div>
+      <div v-if="open" v-for="data in equipments">{{ data }}</div>
     </div>
   </div>
   

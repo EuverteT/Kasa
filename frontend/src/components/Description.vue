@@ -1,8 +1,17 @@
 <script>
 export default{
+
+    data(){
+      return {
+        open: true
+      }
+    },
+
     props: {
-    description: String
+      description: String
 }
+
+
 }
 </script>
 
@@ -10,9 +19,12 @@ export default{
   <div class="component">
     <div class="component-title">
         <div>Description</div>
-        <button class="expand-button">&uarr;</button>
+        <button v-if="open" @click= "open = false" class="notExpand-button">&uarr;</button>
+        <button v-if="!open" @click= "open = true" class="expand-button">&darr;</button>
     </div>
-    <div class="description">{{ description }}</div>
+    <div class="description">
+      <div v-if="open">{{ description }}</div>
+    </div>
   </div>
   
 </template>
