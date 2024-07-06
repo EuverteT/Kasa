@@ -10,9 +10,11 @@ export default{
   <div class="component">
     <div class="component-title">
         <div>Equipements</div>
-        <button>&uarr;</button>
+        <button class="expand-button">&uarr;</button>
     </div>
-    <div>{{ equipments }}</div>
+    <div class="equipments">
+      <div v-for="data in equipments">{{ data }}</div>
+    </div>
   </div>
   
 </template>

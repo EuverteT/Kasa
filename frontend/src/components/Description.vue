@@ -10,9 +10,9 @@ export default{
   <div class="component">
     <div class="component-title">
         <div>Description</div>
-        <button>&uarr;</button>
+        <button class="expand-button">&uarr;</button>
     </div>
-    <div>{{ description }}</div>
+    <div class="description">{{ description }}</div>
   </div>
   
 </template>
