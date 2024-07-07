@@ -1,31 +1,38 @@
 <script>
 import json from '../assets/about.json';
+import AboutBanner from '../components/AboutBanner.vue';
 
 export default{
 
-data(){
-    return {
-        myJson: json,
-        data: [],
-    }
+  components: {
+    AboutBanner
   },
-methods: {
-  closeText(data){
-    document.getElementById(data.expandBtn).style.display = 'block'
-    document.getElementById(data.name).style.display = 'none'
-    document.getElementById(data.notExpandBtn).style.display = 'none'
+  data(){
+      return {
+          myJson: json,
+          data: [],
+      }
+    },
+  methods: {
+    closeText(data){
+      document.getElementById(data.expandBtn).style.display = 'block'
+      document.getElementById(data.name).style.display = 'none'
+      document.getElementById(data.notExpandBtn).style.display = 'none'
 
-  },
-  openText(data){
-    document.getElementById(data.expandBtn).style.display = 'none'
-    document.getElementById(data.name).style.display = 'block'
-    document.getElementById(data.notExpandBtn).style.display = 'block'
+    },
+    openText(data){
+      document.getElementById(data.expandBtn).style.display = 'none'
+      document.getElementById(data.name).style.display = 'block'
+      document.getElementById(data.notExpandBtn).style.display = 'block'
+    }
   }
-}
 }
 </script>
 
 <template>
+
+  <AboutBanner />
+
   <div class="about-container">
     <div class="component" v-for="data of myJson">
       <div class="component-title">
@@ -51,7 +58,7 @@ methods: {
 
 .component {
   margin-bottom: 2rem;
-  width: 70%;
+  width: 80%;
   color: $rouge;
 }
 
