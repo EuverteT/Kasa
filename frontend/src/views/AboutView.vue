@@ -26,19 +26,33 @@ methods: {
 </script>
 
 <template>
-  <div class="component"v-for="data of myJson">
-    <div class="component-title">
-        <div>{{ data.title }}</div>
-        <button :id=data.notExpandBtn @click= "closeText(data)" class="notExpand-button" >&uarr;</button>
-        <button style="display: none" :id=data.expandBtn @click= "openText(data)" class="expand-button">&darr;</button>
-    </div>
-    <div :id=data.name class="description">
-      <div>{{ data.text }}</div>
+  <div class="about-container">
+    <div class="component" v-for="data of myJson">
+      <div class="component-title">
+          <div>{{ data.title }}</div>
+          <button :id=data.notExpandBtn @click= "closeText(data)" class="notExpand-button" >&uarr;</button>
+          <button style="display: none" :id=data.expandBtn @click= "openText(data)" class="expand-button">&darr;</button>
+      </div>
+      <div :id=data.name class="description">
+        <div>{{ data.text }}</div>
+      </div>
     </div>
   </div>
 </template>
 
 <style scoped lang=scss>
 @import "./src/assets/main.scss";
+
+.about-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.component {
+  margin-bottom: 2rem;
+  width: 70%;
+  color: $rouge;
+}
 
 </style>
