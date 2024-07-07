@@ -41,10 +41,7 @@ export default{
       }
     }
   }
-  // ,
-  // props: {
-  // descript: String
-  // }
+  
 
 }
 

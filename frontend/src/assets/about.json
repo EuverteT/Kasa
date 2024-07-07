@@ -2,21 +2,29 @@
     {
         "name": "fiability",
         "title": "Fiabilité",
-        "text": "Test1"
+        "text": "Test1",
+        "expandBtn": "fiabilityExpandBtn",
+        "notExpandBtn": "fiabilityNotExpandBtn"
     },
     {
         "name": "respect",
         "title": "Respect",
-        "text": "Test2"
+        "text": "Test2",
+        "expandBtn": "respectExpandBtn",
+        "notExpandBtn": "respectNotExpandBtn"
     },
     {
         "name": "service",
         "title": "Service",
-        "text": "Test3"
+        "text": "Test3",
+        "expandBtn": "serviceExpandBtn",
+        "notExpandBtn": "serviceNotExpandBtn"
     },
     {
         "name": "security",
         "title": "Sécurité",
-        "text": "Test4"
+        "text": "Test4",
+        "expandBtn": "securityExpandBtn",
+        "notExpandBtn": "ssecurityNotExpandBtn"
     }
 ]
