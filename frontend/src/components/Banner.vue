@@ -1,13 +1,28 @@
 <script>
-export default{
-    name: "AboutBanner"
 
+
+export default{
+    name: "Banner",
+
+    data(){
+      return {
+      
+      aboutSrc: "src/assets/aboutBanner.png",
+      homeSrc: "src/assets/homeBanner.png"
+      
+      }
+      
+    },
+    props: {
+      image: String
+    }
+    
 }
 </script>
 
 <template>
   <div class="banner">
-    <img src="../assets/aboutBanner.png" />
+    <img :src=image >
   </div>
   
 </template>

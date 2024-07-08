@@ -1,17 +1,18 @@
 <script>
 import json from '../assets/about.json';
-import AboutBanner from '../components/AboutBanner.vue';
+import Banner from '../components/Banner.vue';
 
 export default{
 
   components: {
-    AboutBanner
+    Banner
   },
   data(){
       return {
           myJson: json,
           data: [],
-      }
+          aboutSrc: "src/assets/aboutBanner.png"
+        }
     },
   methods: {
     closeText(data){
@@ -31,7 +32,7 @@ export default{
 
 <template>
 
-  <AboutBanner />
+  <Banner :image="aboutSrc"/>
 
   <div class="about-container">
     <div class="component" v-for="data of myJson">

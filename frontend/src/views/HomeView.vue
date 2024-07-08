@@ -1,19 +1,26 @@
 <script>
 import json from '../assets/logements.json';
+import Banner from '../components/Banner.vue';
 
 export default{
+  
+  components: {
+    Banner
+  },
 
-    data(){
-        return {
-            myJson: json
-        }
+  data(){
+    return {
+      myJson: json,
+      homeSrc: "src/assets/homeBanner.png"
+
+      }
     }
-    
 }
 
 </script>
 
 <template>
+  <Banner :image="homeSrc"/>
   <main>
     <div class="global-container">
       <a class="card-container" v-for="data in myJson" 
