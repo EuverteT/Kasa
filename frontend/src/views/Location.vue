@@ -8,6 +8,7 @@ import Description from '../components/Description.vue'
 import Equipments from '../components/Equipments.vue'
 
 
+
 export default{
 
   name: "Location",
@@ -26,7 +27,9 @@ export default{
         id: "",
         data: [],
         test: "",
-        index: ""
+        index: "",
+        arrayLength: ""
+        
         
     }
   },
@@ -44,24 +47,62 @@ export default{
       for (let data of json) {
         if (id == data.id) {
          this.data = data
-         let index = 1
-         
-         this.arrayLength = data.pictures.length 
+
+         let index = 0
+         let arrayLength = data.pictures.length
+
+         localStorage.setItem("index", index);
+         localStorage.setItem("arrayLength", arrayLength);
+
          this.test = data.pictures[index]
+         console.log("index on load: " + index)
+         console.log("arrayLength on load: " + arrayLength)
+
+        
         }
       }
     },
-    displayNext() {
-      console.log("appui")
-      console.log(index)
-
+    displayNext(){
+      for (let data of json) {
+          if (id == data.id) {
+            this.data = data
+            let index = localStorage.getItem("index")
+            let arrayLength = localStorage.getItem("arrayLength");
+              if (index == (arrayLength-1)) {
+                index = 0
+                this.test = data.pictures[index]
+                localStorage.setItem("index", index);
+              }            
+              else {
+                index++
+                this.test = data.pictures[index]
+                localStorage.setItem("index", index);
+              }
+          }
+      }
+    },
+    displayPrev(){
+      for (let data of json) {
+          if (id == data.id) {
+            this.data = data
+            let index = localStorage.getItem("index")
+            let arrayLength = localStorage.getItem("arrayLength");
+              if (index == 0) {
+                index = (arrayLength-1)
+                this.test = data.pictures[index]
+                localStorage.setItem("index", index);
+              }            
+              else {
+                index--
+                this.test = data.pictures[index]
+                localStorage.setItem("index", index);
+              }
+          }
+      }
     }
   }
-  
 
 }
-
-
 
 </script>
 
@@ -69,8 +110,8 @@ export default{
   <main>
     <div class="global-container">
       <div class="galery">
-        <button @click="displayPrevious()" class="galeryBtnLeft">&larr;</button>
-        <img :src="test">
+        <button @click="displayPrev()"class="galeryBtnLeft">&larr;</button>
+        <img class="galeryImg" :src="test">
         <button @click="displayNext()" class="galeryBtnRight">&#x2192;</button>
       </div>
 
@@ -115,6 +156,7 @@ export default{
 }
 
 .galeryImg {
+  width: 70%
 }
 
 .galeryBtnLeft {
