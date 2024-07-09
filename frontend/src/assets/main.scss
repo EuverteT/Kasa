@@ -16,7 +16,11 @@ a,
 }
 
 .component {
-  width: 40%;
+  width: 47%;
+
+  @include small {
+    width: 90%;
+  }
 }
 
 .component-title {

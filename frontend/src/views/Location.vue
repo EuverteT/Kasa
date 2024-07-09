@@ -159,24 +159,31 @@ export default{
 
 .galeryImg {
   width: 70%;
-  height: 300px;
+  height: 500px;
+
+  @include small {
+    width: 90%;
+    height: 300px;
+  }
 }
 
-.galeryBtnLeft {
-
-  background: none;
-  border: none;
-  color: black;
-  font-size: 10rem;
-  
-}
-
+.galeryBtnLeft,
 .galeryBtnRight {
-  
+
   background: none;
   border: none;
   color: black;
   font-size: 10rem;
+
+  @include small {
+    font-size: 3rem;
+  }
+
+  @include verySmall {
+    font-size: 1.5rem;
+
+  }
+  
 }
 
 .global-container {
@@ -184,6 +191,11 @@ export default{
   flex-direction: column;
   color: $rouge;
   margin: 0 5rem;
+
+  @include small {
+    margin: 0 1rem;
+
+  }
 
 }
 
@@ -202,12 +214,33 @@ img {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+
+  @include small {
+    flex-direction: column;
+  }
 }
 
 .bottom-container {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+
+  @include small {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.hostAndRating-container {
+  padding: 1rem;
+
+  @include small {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+  }
+
 }
 
 .host-container {
@@ -236,6 +269,12 @@ img {
   display: flex;
   flex-direction: row;
   margin: 1rem 0;
+
+  @include verySmall {
+    flex-wrap: wrap;
+
+  }
+
 }
 
 .tags {
@@ -244,6 +283,13 @@ img {
   color: white;
   border-radius: 0.5rem;
   padding: 0.2rem 0.5rem;
+
+  @include verySmall {
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+
+  }
+
 }
 
 </style>

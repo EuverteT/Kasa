@@ -28,10 +28,18 @@ import HeureCourante from '../components/HeureCourante.vue';
   justify-content: space-between;
   margin: 1rem;
 
+  @include verySmall {
+    flex-direction: column;
+  }
+
   nav  {
     display: flex;
     flex-direction: row;
     align-items: center;
+
+    @include verySmall {
+    flex-direction: column;
+    }
 
     a {
       font-size: 1.5rem;
@@ -40,6 +48,12 @@ import HeureCourante from '../components/HeureCourante.vue';
       margin: 0 1rem;
       background: $mid-grey;
       border-radius: 0.5rem;
+
+      @include verySmall {
+        padding: 0.3rem;
+        margin: 0.3rem 0;
+
+      }
 
       &:hover {
       background: $hard-grey;
