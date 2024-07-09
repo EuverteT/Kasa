@@ -1,10 +1,7 @@
 <script>
 
 const currentPath = window.location.href
-// console.log(currentPath)
-
 const id = currentPath.slice(31)
-// console.log(id)
 
 import json from '../assets/logements.json';
 import Description from '../components/Description.vue'
@@ -21,12 +18,15 @@ export default{
 
   created() {
     this.getData();
+    this.displayPicture()
   },
   data(){
     return {
         myJson: json,
         id: "",
-        data: []
+        data: [],
+        test: "",
+        index: ""
         
     }
   },
@@ -39,6 +39,22 @@ export default{
          this.data = data 
         }
       }
+    },
+    displayPicture(){
+      for (let data of json) {
+        if (id == data.id) {
+         this.data = data
+         let index = 1
+         
+         this.arrayLength = data.pictures.length 
+         this.test = data.pictures[index]
+        }
+      }
+    },
+    displayNext() {
+      console.log("appui")
+      console.log(index)
+
     }
   }
   
@@ -52,7 +68,11 @@ export default{
 <template>
   <main>
     <div class="global-container">
-      <img :src="data.cover"/>
+      <div class="galery">
+        <button @click="displayPrevious()" class="galeryBtnLeft">&larr;</button>
+        <img :src="test">
+        <button @click="displayNext()" class="galeryBtnRight">&#x2192;</button>
+      </div>
 
       <div class="mid-container">
     
@@ -87,6 +107,32 @@ export default{
 
 <style scoped lang="scss">
 @import "../assets/main.scss";
+
+.galery {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.galeryImg {
+}
+
+.galeryBtnLeft {
+
+  background: none;
+  border: none;
+  color: black;
+  font-size: 10rem;
+  
+}
+
+.galeryBtnRight {
+  
+  background: none;
+  border: none;
+  color: black;
+  font-size: 10rem;
+}
 
 .global-container {
   display: flex;
@@ -135,7 +181,6 @@ img {
   }
 
 }
-
 
 .title {
   font-size: 2rem;
