@@ -9,6 +9,7 @@ import Equipments from '../components/Equipments.vue'
 
 
 
+
 export default{
 
   name: "Location",
@@ -20,7 +21,9 @@ export default{
   created() {
     this.getData();
     this.displayPicture()
+    
   },
+  
   data(){
     return {
         myJson: json,
@@ -29,14 +32,12 @@ export default{
         test: "",
         index: "",
         arrayLength: ""
-        
-        
+            
     }
   },
   methods: {
 
     getData(){
-      // console.log(id)
       for (let data of json) {
         if (id == data.id) {
          this.data = data 
@@ -62,6 +63,7 @@ export default{
         }
       }
     },
+    
     displayNext(){
       for (let data of json) {
           if (id == data.id) {
@@ -110,9 +112,9 @@ export default{
   <main>
     <div class="global-container">
       <div class="galery">
-        <button @click="displayPrev()"class="galeryBtnLeft">&larr;</button>
+        <button v-if="(data.pictures.length) > 2" @click="displayPrev()"class="galeryBtnLeft">&larr;</button>
         <img class="galeryImg" :src="test">
-        <button @click="displayNext()" class="galeryBtnRight">&#x2192;</button>
+        <button v-if="(data.pictures.length) > 2" @click="displayNext()" class="galeryBtnRight">&#x2192;</button>
       </div>
 
       <div class="mid-container">
@@ -156,7 +158,8 @@ export default{
 }
 
 .galeryImg {
-  width: 70%
+  width: 70%;
+  height: 300px;
 }
 
 .galeryBtnLeft {
