@@ -30,6 +30,8 @@ import HeureCourante from '../components/HeureCourante.vue';
 
   @include verySmall {
     flex-direction: column;
+    margin: 0rem;
+
   }
 
   nav  {
@@ -50,10 +52,11 @@ import HeureCourante from '../components/HeureCourante.vue';
       border-radius: 0.5rem;
 
       @include verySmall {
-        padding: 0.3rem;
-        margin: 0.3rem 0;
+        margin: 1rem 0;
         width: 100vw;
         text-align: center;
+        padding: 0;
+        margin: 0;
 
       }
 

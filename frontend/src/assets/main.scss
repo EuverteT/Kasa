@@ -3,15 +3,16 @@
 @import "mixins";
 
 #app {
-  margin: 0 auto;
+  margin: 0;
 
 }
 
-a,
-.green {
+a
+{
   text-decoration: none;
+  padding: 0;
+  margin: 0;
   transition: 0.4s;
-  padding: 3px;
   color: $rouge;
 }
 
@@ -19,6 +20,9 @@ a,
   width: 47%;
 
   @include small {
+    width: 90%;
+  }
+  @include verySmall {
     width: 90%;
   }
 }

@@ -165,6 +165,11 @@ export default{
     width: 90%;
     height: 300px;
   }
+  @include verySmall {
+    width: 90%;
+    height: 300px;
+  }
+
 }
 
 .galeryBtnLeft,
@@ -194,9 +199,10 @@ export default{
 
   @include small {
     margin: 0 1rem;
-
   }
-
+  @include verySmall {
+    margin: 0 1rem;
+  }
 }
 
 
@@ -218,6 +224,9 @@ img {
   @include small {
     flex-direction: column;
   }
+  @include verySmall {
+    flex-direction: column;
+  }
 }
 
 .bottom-container {
@@ -226,6 +235,10 @@ img {
   justify-content: space-between;
 
   @include small {
+    flex-direction: column;
+    align-items: center;
+  }
+  @include verySmall {
     flex-direction: column;
     align-items: center;
   }
@@ -240,7 +253,12 @@ img {
     align-items: center;
     justify-content: space-around;
   }
-
+  @include verySmall {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+  }
 }
 
 .host-container {
