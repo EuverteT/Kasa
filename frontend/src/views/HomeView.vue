@@ -62,6 +62,15 @@ export default{
   display: flex;
   flex-direction: column;
 
+  @include verySmall {
+    width: 80%;
+
+  };
+
+  @include small {
+    width: 40%;
+
+  }
 }
 
 img {

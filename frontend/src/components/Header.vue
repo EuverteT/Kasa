@@ -52,6 +52,8 @@ import HeureCourante from '../components/HeureCourante.vue';
       @include verySmall {
         padding: 0.3rem;
         margin: 0.3rem 0;
+        width: 100vw;
+        text-align: center;
 
       }
 
