@@ -9,3 +9,26 @@
       @content;
     }
   }
+
+@mixin flexRowAICenter {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+@mixin flexRowJCCenter {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+@mixin flexRowJCBetween {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+@mixin flexColumn {
+  display: flex;
+  flex-direction: column;
+}

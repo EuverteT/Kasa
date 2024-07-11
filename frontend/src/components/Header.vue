@@ -31,9 +31,7 @@ import HeureCourante from '../components/HeureCourante.vue';
   }
 
   nav  {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+    @include flexRowAICenter;
     @include verySmall {
     flex-direction: column;
     }

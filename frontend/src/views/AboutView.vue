@@ -49,8 +49,7 @@ export default{
 @import "./src/assets/main.scss";
 
 .about-container {
-  display: flex;
-  flex-direction: column;
+  @include flexColumn;
   align-items: center;
 }
 
@@ -59,5 +58,4 @@ export default{
   width: 90%;
   color: $rouge;
 }
-
 </style>

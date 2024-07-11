@@ -135,9 +135,7 @@ export default{
 @import "../assets/main.scss";
 
 .galery {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+  @include flexRowJCCenter;
 }
 
 .galeryImg {
@@ -168,8 +166,7 @@ export default{
 }
 
 .global-container {
-  display: flex;
-  flex-direction: column;
+  @include flexColumn;
   color: $rouge;
   margin: 0 5rem;
   @include small {
@@ -179,7 +176,6 @@ export default{
     margin: 0 1rem;
   }
 }
-
 
 img {
   max-height: 400px;
@@ -191,9 +187,7 @@ img {
 }
 
 .mid-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  @include flexRowJCBetween;
   @include small {
     flex-direction: column;
   }
@@ -203,9 +197,7 @@ img {
 }
 
 .bottom-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  @include flexRowJCBetween;
   @include small {
     flex-direction: column;
     align-items: center;
@@ -219,23 +211,17 @@ img {
 .hostAndRating-container {
   padding: 1rem;
   @include small {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+    @include flexRowAICenter;
     justify-content: space-around;
   }
   @include verySmall {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+    @include flexRowAICenter;
     justify-content: space-around;
   }
 }
 
 .host-container {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
+  @include flexRowAICenter;
   .host {
     margin-right: 1rem;
   }
@@ -257,7 +243,6 @@ img {
   margin: 1rem 0;
   @include verySmall {
     flex-wrap: wrap;
-
   }
 }
 
@@ -272,7 +257,6 @@ img {
     margin-bottom: 0.5rem;
   }
 }
-
 </style>
 
 

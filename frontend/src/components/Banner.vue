@@ -24,9 +24,8 @@ export default{
 
 @import "./src/assets/main.scss";
 .banner {
-  display: flex;
+  @include flexColumn;
   justify-content: center;
-  flex-direction: column;
   align-items: center;
   margin: 1rem;
 

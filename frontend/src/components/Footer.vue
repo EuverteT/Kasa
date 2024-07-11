@@ -13,10 +13,9 @@
 @import "./src/assets/main.scss";
 
 .footer {
-  display: flex;
+  @include flexColumn;
   align-items: center;
   justify-content: space-between;
-  flex-direction: column;
   padding: 1rem;
   background: black;
   color: white;

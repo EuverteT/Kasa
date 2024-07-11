@@ -40,13 +40,11 @@ export default{
 }
 
 .global-container {
-  display: flex;
-  flex-direction: row;
+  @include flexRowJCCenter;
   flex-wrap: wrap;
-  justify-content: center;
   text-align: center;
-
 }
+
 .card-container{
   border: 1px solid black;
   margin: 1rem;
@@ -54,8 +52,7 @@ export default{
   border-radius: 0.5rem;
   background-color: $rouge;
   color: white;
-  display: flex;
-  flex-direction: column;
+  @include flexColumn;
   @include verySmall {
     width: 80%;
   };
