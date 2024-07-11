@@ -12,11 +12,9 @@ export default{
     return {
       myJson: json,
       homeSrc: "src/assets/homeBanner.png"
-
       }
     }
 }
-
 </script>
 
 <template>
@@ -29,10 +27,7 @@ export default{
       <img :src="data.cover"/>
       <div class="homeCardTitle"> {{ data.title }}</div>
       </a>
-
     </div>
-
-
   </main>
 </template>
 
@@ -61,15 +56,11 @@ export default{
   color: white;
   display: flex;
   flex-direction: column;
-
   @include verySmall {
     width: 80%;
-
   };
-
   @include small {
     width: 40%;
-
   }
 }
 
@@ -78,5 +69,4 @@ img {
   width: 100%;
   height: 80%;
 }
-
 </style>

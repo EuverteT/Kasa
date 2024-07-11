@@ -7,9 +7,6 @@ import json from '../assets/logements.json';
 import Description from '../components/Description.vue'
 import Equipments from '../components/Equipments.vue'
 
-
-
-
 export default{
 
   name: "Location",
@@ -31,12 +28,10 @@ export default{
         data: [],
         test: "",
         index: "",
-        arrayLength: ""
-            
+        arrayLength: ""      
     }
   },
   methods: {
-
     getData(){
       for (let data of json) {
         if (id == data.id) {
@@ -56,10 +51,6 @@ export default{
          localStorage.setItem("arrayLength", arrayLength);
 
          this.test = data.pictures[index]
-         console.log("index on load: " + index)
-         console.log("arrayLength on load: " + arrayLength)
-
-        
         }
       }
     },
@@ -116,9 +107,7 @@ export default{
         <img class="galeryImg" :src="test">
         <button v-if="(data.pictures.length) > 2" @click="displayNext()" class="galeryBtnRight">&#x2192;</button>
       </div>
-
-      <div class="mid-container">
-    
+      <div class="mid-container">    
         <div class="info-container">
           <div class="title">{{ data.title }}</div>
           <div class="location">{{ data.location }}</div>
@@ -126,7 +115,6 @@ export default{
             <div class="tags" v-for="tag in data.tags">{{ tag }}</div>
           </div>
         </div>
-
         <div class="hostAndRating-container">
           <div class="host-container">
             <div class="host">{{data.host.name}}</div>
@@ -135,16 +123,11 @@ export default{
           <div class="rating">{{ data.rating }} étoiles</div>
         </div>
       </div>
-
       <div class="bottom-container">
         <Description :description="data.description" />
         <Equipments :equipments="data.equipments" />
-      </div>
-      
+      </div>     
     </div>
-
-
-
   </main>
 </template>
 
@@ -160,7 +143,6 @@ export default{
 .galeryImg {
   width: 70%;
   height: 500px;
-
   @include small {
     width: 90%;
     height: 300px;
@@ -169,26 +151,20 @@ export default{
     width: 90%;
     height: 300px;
   }
-
 }
 
 .galeryBtnLeft,
 .galeryBtnRight {
-
   background: none;
   border: none;
   color: black;
   font-size: 10rem;
-
   @include small {
     font-size: 3rem;
   }
-
   @include verySmall {
     font-size: 1.5rem;
-
   }
-  
 }
 
 .global-container {
@@ -196,7 +172,6 @@ export default{
   flex-direction: column;
   color: $rouge;
   margin: 0 5rem;
-
   @include small {
     margin: 0 1rem;
   }
@@ -213,14 +188,12 @@ img {
   object-fit: cover;
   border-radius: 0.5rem;
   margin-bottom: 1rem;
-
 }
 
 .mid-container {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-
   @include small {
     flex-direction: column;
   }
@@ -233,7 +206,6 @@ img {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-
   @include small {
     flex-direction: column;
     align-items: center;
@@ -246,7 +218,6 @@ img {
 
 .hostAndRating-container {
   padding: 1rem;
-
   @include small {
     display: flex;
     flex-direction: row;
@@ -265,17 +236,14 @@ img {
   display: flex;
   flex-direction: row;
   align-items: center;
-
   .host {
     margin-right: 1rem;
   }
-
   img {
     height: 50px;
     width: 50px;
     border-radius: 2rem;
   }
-
 }
 
 .title {
@@ -287,12 +255,10 @@ img {
   display: flex;
   flex-direction: row;
   margin: 1rem 0;
-
   @include verySmall {
     flex-wrap: wrap;
 
   }
-
 }
 
 .tags {
@@ -301,13 +267,10 @@ img {
   color: white;
   border-radius: 0.5rem;
   padding: 0.2rem 0.5rem;
-
   @include verySmall {
     margin-right: 0.5rem;
     margin-bottom: 0.5rem;
-
   }
-
 }
 
 </style>

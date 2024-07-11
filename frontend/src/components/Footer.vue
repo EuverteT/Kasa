@@ -1,15 +1,11 @@
-<script setup>
-import { RouterLink } from 'vue-router'
-
+<script>
 </script>
 
 <template>
   <div class="footer">
     <img alt="Logo Kasa Black" class="logo" src="@/assets/kasa-black.png" width="125" height="50" />
-  
     <div>2024 Kasa. All rights reserved.</div>
-  </div>
-  
+  </div>  
 </template>
 
 <style scoped lang=scss>
@@ -17,7 +13,6 @@ import { RouterLink } from 'vue-router'
 @import "./src/assets/main.scss";
 
 .footer {
-
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -25,7 +20,5 @@ import { RouterLink } from 'vue-router'
   padding: 1rem;
   background: black;
   color: white;
-
   }
-
 </style>

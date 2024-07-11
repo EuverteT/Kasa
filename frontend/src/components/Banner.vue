@@ -1,5 +1,4 @@
 <script>
-
 export default{
     name: "Banner",
     data(){
@@ -35,14 +34,12 @@ export default{
     color: white;
     position: absolute;
     font-size: 3rem;
-
     @include verySmall {
     font-size: 1.5rem;
     }
     @include small {
     font-size: 2rem;
     }
-
   }
 }
 

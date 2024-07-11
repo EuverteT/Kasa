@@ -4,7 +4,6 @@
 
 #app {
   margin: 0;
-
 }
 
 a
@@ -18,12 +17,11 @@ a
 
 .component {
   width: 47%;
-
   @include small {
-    width: 90%;
+    width: 100%;
   }
   @include verySmall {
-    width: 90%;
+    width: 100%;
   }
 }
 
@@ -37,7 +35,6 @@ a
   padding: 1rem;
   border-radius: 0.5rem;
   font-size: 1.5rem;
-
 }
 
 .expand-button,
@@ -50,7 +47,6 @@ a
 
 .description,
 .equipments {
-
   background-color: $mid-grey;
   padding: 1rem;
   font-size: 1.5rem;

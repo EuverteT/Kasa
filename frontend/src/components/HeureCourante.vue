@@ -28,5 +28,4 @@ export default {
     font-weight: 800;
     text-decoration: underline;
 }
-
 </style>

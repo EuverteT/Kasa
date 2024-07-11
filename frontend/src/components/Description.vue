@@ -1,17 +1,13 @@
 <script>
 export default{
-
     data(){
       return {
         open: true
       }
     },
-
     props: {
       description: String
     }
-
-
 }
 </script>
 
@@ -26,7 +22,6 @@ export default{
       <div v-if="open">{{ description }}</div>
     </div>
   </div>
-  
 </template>
 
 <style scoped lang=scss>

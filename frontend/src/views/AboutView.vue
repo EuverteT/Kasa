@@ -19,7 +19,6 @@ export default{
       document.getElementById(data.expandBtn).style.display = 'block'
       document.getElementById(data.name).style.display = 'none'
       document.getElementById(data.notExpandBtn).style.display = 'none'
-
     },
     openText(data){
       document.getElementById(data.expandBtn).style.display = 'none'
@@ -31,9 +30,7 @@ export default{
 </script>
 
 <template>
-
   <Banner :image="aboutSrc"/>
-
   <div class="about-container">
     <div class="component" v-for="data of myJson">
       <div class="component-title">
@@ -59,7 +56,7 @@ export default{
 
 .component {
   margin-bottom: 2rem;
-  width: 80%;
+  width: 90%;
   color: $rouge;
 }
 

@@ -6,10 +6,9 @@ export default{
         open: true
       }
     },
-
     props: {
       equipments: Array
-}
+    }
 }
 </script>
 
@@ -24,7 +23,6 @@ export default{
       <div v-if="open" v-for="data in equipments">{{ data }}</div>
     </div>
   </div>
-  
 </template>
 
 <style scoped lang=scss>
